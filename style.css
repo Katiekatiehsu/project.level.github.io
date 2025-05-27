@@ -1,0 +1,501 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* CSS Reset End */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
+
+body {
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+
+
+/*修改盒模型計算方式*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+    /* 方便調整版面 */
+    /* outline: 1px solid; */
+}
+
+
+.blog{
+    margin: 0 auto;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 24px;
+    padding-right: 80px;
+    padding-bottom: 24px;
+    padding-left: 80px;
+    gap: 40px;
+}
+
+
+
+.menu li a {
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+
+}
+
+.menu li a:hover{
+    border-bottom: #0027d5 5px solid;
+}
+
+
+.banner {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+}
+
+.herosection_1,
+.herosection_2 {
+    flex: 1;
+    display: flex; 
+    align-items: center;
+}
+
+.herosection_1 img {
+    width: 100%;
+    height: auto;
+}
+
+
+.herosection_2 {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    background: url('https://github.com/hexschool/2022-web-layout-training/blob/main/2025-web-camp/desktop/index/Hero%20Section2.png?raw=true') no-repeat;
+    background-size: cover;
+}
+
+
+.herosection_text h1 {
+    font-size: 120px;
+    font-weight: 900;
+    color: #0027d5;
+}
+
+.herosection_text p {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0027d5;
+}
+
+
+@media (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .herosection_1 img,
+    .herosection_2 {
+        width: 100%;
+    }
+
+    .herosection_text h1 {
+        font-size: 80px;
+        /* 調整標題大小避免小螢幕過大 */
+    }
+
+    .herosection_text p {
+        font-size: 24px;
+    }
+
+}
+
+
+
+.article {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+}
+
+.aboutsection,
+.new_article{
+    flex: 1;
+    display: flex; 
+    align-items: center;
+}
+
+.aboutsection img {
+    flex: 1;
+    width: 100%;
+    height: auto;
+}
+
+
+/*部落格文章日期*/
+
+time {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black;
+    display: block;
+}
+
+
+/*部落格標籤*/
+.card .tag {
+    font-size: 24px;
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+
+/*h2標題*/
+.card .title {
+    font-size: 28px;
+    font-weight: 700;
+    color: black;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*部落格文章內容*/
+.card_text {
+    font-size: 16px;
+    color: #4b4b4a;
+    margin-bottom: 20px;
+    /*隱藏多行溢出文字*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+/*部落格文章連結*/
+.read-more {
+    color: #4b4b4a;
+    text-decoration: none;
+    font-size: 16px;
+    border: #4b4b4a 1px solid;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.read-more:hover {
+    background-color: #4b4b4a;
+    color: white;
+}
+
+
+.hot{
+    display: inline-block;
+    color: white;
+    background-color: blue;
+    padding: 4px 8px;
+    border-radius: 20px;
+
+}
+
+@media (max-width: 768px) {
+    .article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aboutsection,
+    .new_article {
+        width: 100%;
+    }
+
+}
+
+
+.content {
+    margin: 0 auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.search{
+    padding-left: 10%;
+    padding-right: 10%;
+    gap: 10px;
+}
+.search_border{
+    border: 1px solid #4b4b4a;
+    border-radius: 40px;
+    width: 416px;
+    height: 56px;
+    padding: 16px 48px 16px 16px;
+    gap: 10px;
+    position: relative;
+    
+}
+
+.search_input{
+    width: 318px;
+    height: 24px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 40px;
+}
+
+.search_border::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    background: url('./img/search.png') no-repeat center/cover;
+}
+
+
+
+.article_list {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 80px 24px;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+    max-width: 100%; 
+    margin: 0 auto;
+}
+
+
+.card_small {
+    width: 30%;
+    padding: 10px;
+}
+
+/*圖片*/
+.card img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    /*處理img下面的空白*/
+}
+
+.null{
+    width: 30%;
+    padding: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .article_list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 100%;
+        max-width: 600px; 限制卡片的最大寬度
+        margin-bottom: 20px; /* 卡片之間的間距 */
+    }
+
+}
+
+.page_list {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    /* width: 24px;
+    height: 24px; */
+}
+.page_list a {
+    font-size: 16px;
+    color: #4b4b4a;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+
+
+
+.aboutme{
+    display: flex;
+    justify-content:space-around;
+    margin-bottom: 40px;
+}
+
+.aboutemail p{
+    font-size: 32px;
+}
+
+.aboutLink_list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.aboutLink_list img{
+    max-width: 44px;
+    max-height: 44px;
+}
+
+.fotter_text {
+    text-align: center;
+    font-size: 16px;
+    color: #4b4b4a;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
